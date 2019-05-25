@@ -8,10 +8,10 @@ const rectangle = (props) => {
     left: props.left,
     width: props.width,
     height: props.height,
-    zIndex: props.order,
+    zIndex: props.id,
   };
 
-  const isSmallBox = (props.width * props.height) < 2500;
+  const isSmallBox = (props.width * props.height) < 2000;
 
   const onClickHandler = e => {
     e.preventDefault();
@@ -31,6 +31,7 @@ const rectangle = (props) => {
             :'Right Click to remove'
         }
       </div>
+
     </div>
   );
 }

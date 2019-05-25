@@ -18,3 +18,8 @@
   background-color: $background-color;
   position: relative;
 }
+@media print {
+  .content {
+    background-color: $background-color-inverted;
+  }
+}

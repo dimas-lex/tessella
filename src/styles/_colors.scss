@@ -10,6 +10,7 @@ $black: #0D0D0D;
 
 
 $rect-background-color: $blue-light;
+$rect-background-color-inverted: $white;
 $rect-border-color: $blue;
 
 $drawer-background-color: $blue;
@@ -17,6 +18,7 @@ $drawer-color: $white;
 
 
 $background-color: $white;
+$background-color-inverted: $blue-light;
 $background-color-primary: $blue-light;
 
 
@@ -25,9 +27,6 @@ $font-color-invert: $white;
 $primary-color: $blue;
 
 $z-index-aside: 1000;
-
-$border-color: $blue;
-
 
 
 $box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.68);

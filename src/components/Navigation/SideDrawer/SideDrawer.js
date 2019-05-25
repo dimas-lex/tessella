@@ -1,6 +1,5 @@
 import React from 'react';
 import StatisticBox from '../StatisticBox/StatisticBox';
-
 import classes from './SideDrawer.module.scss';
 
 const sideDrawer = (props) => {

@@ -13,6 +13,11 @@
   text-align: center;
   opacity: 0.95;
 }
+@media print {
+  .rectangle {
+    background-color: $rect-background-color-inverted;
+  }
+}
 
 .rectangle_info {
   color: $font-color-invert;
@@ -21,8 +26,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 16px;
+  user-select: none;
 }
 
-.rectangle_text__hidden {
-  display: none;
+@media print {
+  .rectangle_info {
+    color: $font-color;
+  }
 }

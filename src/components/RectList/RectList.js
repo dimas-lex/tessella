@@ -9,7 +9,7 @@ const rectList = (props) => {
 
     return rectList.map(
       (rect, indx) => <Rectangle
-                        key={indx}
+                        key={rect.id}
                         {...rect}
                         onItemClick={() => props.onRemoveItem(indx)} />
     );
