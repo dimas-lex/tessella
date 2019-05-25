@@ -1,0 +1,31 @@
+@import 'styles/_colors.scss';
+
+.tbutton {
+    background-color: $button-background;
+    border: 2px solid $button-border-color;
+    color: $primary-color;
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: $button-color;
+    padding: 10px;
+    margin: 0;
+    transition: $transition-all;
+}
+
+.tbutton:hover,
+.tbutton:active {
+  border: 2px solid $button-border--hover;
+  color: $button-color--hover;
+}
+
+.tbutton--disabled {
+  cursor: not-allowed;
+  border: 2px solid $button-border--disabled;
+  color: $button-color--disabled;
+  background-color: $button-background--disabled;
+}
+
+

@@ -1,0 +1,47 @@
+$blue-dart: #29567A;
+$blue: #82A8D9;
+$blue-light: #A0BED9;
+
+$gray-dark: #556573;
+$gray: #EBEFF2;
+
+$white: #F9F9F9;
+$black: #0D0D0D;
+
+
+$rect-background-color: $blue-light;
+$rect-border-color: $blue;
+
+$drawer-background-color: $blue;
+$drawer-color: $white;
+
+
+$background-color: $white;
+$background-color-primary: $blue-light;
+
+
+$font-color: $black;
+$font-color-invert: $white;
+$primary-color: $blue;
+
+$z-index-aside: 1000;
+
+$border-color: $blue;
+
+
+
+$box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.68);
+$box-shadow-min: 0px 0px 20px 0px rgba(0,0,0,0.68);
+
+$button-background: $blue;
+$button-border-color: $gray;
+$button-color: $gray;
+
+$button-border--hover: $gray-dark;
+$button-color--hover: $gray-dark;
+
+$button-background--disabled: $gray;
+$button-border--disabled: $gray-dark;
+$button-color--disabled: $gray-dark;
+
+$transition-all: 0.3s all ease;

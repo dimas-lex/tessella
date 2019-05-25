@@ -1,0 +1,28 @@
+@import 'styles/_colors.scss';
+
+.rectangle {
+  position: absolute;
+  background-color: $rect-background-color;
+  border: 1px solid $rect-border-color;
+  box-sizing: border-box;
+  content: ' ';
+  left: 100;
+  top: -100;
+  transition: $transition-all;
+  box-shadow: $box-shadow;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.rectangle_info {
+  color: $font-color-invert;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+}
+
+.rectangle_text__hidden {
+  display: none;
+}
