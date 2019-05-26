@@ -1,5 +1,7 @@
 import React from 'react';
 import StatisticBox from '../StatisticBox/StatisticBox';
+import TButton from '../../UI/TButton/TButton';
+
 import classes from './SideDrawer.module.scss';
 
 const sideDrawer = (props) => {
@@ -11,6 +13,7 @@ const sideDrawer = (props) => {
       </p>
 
       <StatisticBox {...props} />
+      <TButton onClick={props.onReset}> Reset Store </TButton>
     </div>
   );
 };

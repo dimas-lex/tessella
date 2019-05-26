@@ -2,6 +2,7 @@ export const actionTypes = {
   ADD_RECT_TO_LIST: 'ADD_RECT_TO_LIST',
   REMOVE_RECT_TO_LIST: 'REMOVE_RECT_TO_LIST',
   RECALCULATE_AVAILABILITY_COUNTERS: 'RECALCULATE_AVAILABILITY_COUNTERS',
+  RESET_STORE: 'RESET_STORE',
 };
 
 export const addRectToList = (rect) => ({
@@ -26,4 +27,8 @@ export const removeRectFromList = (index) => {
 
 export const recalculateAvailabilityCounters = () => ({
   type: actionTypes.RECALCULATE_AVAILABILITY_COUNTERS,
+});
+
+export const resetStore = () => ({
+  type: actionTypes.RESET_STORE,
 });

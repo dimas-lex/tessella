@@ -25,7 +25,6 @@ const recalculateMaxAvailability = (rectList) => {
 
 const reducer = (state = initState, action) => {
   switch(action.type) {
-
     case actionTypes.ADD_RECT_TO_LIST:
       const newRect = action.payload.rect;
 
@@ -58,6 +57,12 @@ const reducer = (state = initState, action) => {
       return {
         ...state,
         ...recalculateMaxAvailability(state.rectList),
+      };
+
+    case actionTypes.RESET_STORE:
+      return {
+        ...initState,
+        ...recalculateMaxAvailability(initState.rectList),
       };
 
     default:

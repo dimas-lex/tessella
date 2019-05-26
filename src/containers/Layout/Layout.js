@@ -7,6 +7,8 @@ import ReactList from '../../components/RectList/RectList';
 
 import classes from './Layout.module.scss';
 
+const TEMP_RECT_ID = 100500;
+
 export class Layout extends PureComponent {
   state = {
     isAdding: false,
@@ -32,6 +34,7 @@ export class Layout extends PureComponent {
         top: e.clientY,
         width: 0,
         height: 0,
+        id: TEMP_RECT_ID,
       },
     });
   }
@@ -86,6 +89,7 @@ export class Layout extends PureComponent {
           <SideDrawer
             availableWidth={props.availableWidth}
             availableCount={props.availableCount}
+            onReset={props.onResetStore}
           />
         </aside>
         <main
@@ -117,6 +121,7 @@ const mapDispatchToProps = (dispatch) => {
     addNewRect: (rect) => dispatch(actions.addRectToList(rect)),
     removeRectHandler: (index) => dispatch(actions.removeRectFromList(index)),
     recalculateMaxAvailability: () => dispatch(actions.recalculateAvailabilityCounters()),
+    onResetStore: () => dispatch(actions.resetStore()),
   };
 };
 
