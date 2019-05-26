@@ -19,12 +19,30 @@ describe('<StatisticBox />', () => {
     expect(wrapper.is('div')).toEqual(true);
   });
 
+
   it('should render show available width', () => {
+    const width = 100;
     wrapper.setProps({
-      availableWidth: 100,
+      availableWidth: width,
     });
-    console.log(wrapper)
-    expect(wrapper.find(classes.statistic_values)).toHaveLength(2);
+
+    expect(wrapper.find(`.${classes.statistic_values}`)).toHaveLength(2);
+    expect(
+        wrapper.find(`div div:first-child > .${classes.statistic_values}`).text()
+    ).toEqual(`${width}px`);
+  });
+
+
+  it('should render show available rect counts', () => {
+    const count = 5;
+    wrapper.setProps({
+      availableCount: count,
+    });
+
+    expect(wrapper.find(`.${classes.statistic_values}`)).toHaveLength(2);
+    expect(
+        wrapper.find(`div div:last-child > .${classes.statistic_values}`).text()
+    ).toBe(count);
   });
 
 });
