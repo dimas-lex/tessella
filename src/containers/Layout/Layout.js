@@ -7,10 +7,7 @@ import ReactList from '../../components/RectList/RectList';
 
 import classes from './Layout.module.scss';
 
-const ADDING_id_POSITION = 100500;
-const MAX_RECTS_COUNT = 5;
-
-class Layout extends PureComponent {
+export class Layout extends PureComponent {
   state = {
     isAdding: false,
     newRect: null,
@@ -35,7 +32,6 @@ class Layout extends PureComponent {
         top: e.clientY,
         width: 0,
         height: 0,
-        id: ADDING_id_POSITION,
       },
     });
   }
@@ -70,14 +66,15 @@ class Layout extends PureComponent {
 
     this.props.addNewRect({
       ...this.state.newRect,
-      id: this.props.rectList.length,
     });
   }
 
   render() {
     const state = this.state;
     const props = this.props;
-    const list = [...props.rectList];
+    const list = Array.isArray(props.rectList)
+        ? [...props.rectList]
+        : [];
 
     if (state.isAdding) {
       list.push(state.newRect)
@@ -106,6 +103,7 @@ class Layout extends PureComponent {
     );
   }
 };
+
 const mapStateToProps = state => {
   return {
     rectList: state.rectList || [],
@@ -117,7 +115,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNewRect: (rect) => dispatch(actions.addRectToList(rect)),
-    removeRectHandler: (rectIndex) => dispatch(actions.removeRectFromList(rectIndex)),
+    removeRectHandler: (index) => dispatch(actions.removeRectFromList(index)),
     recalculateMaxAvailability: () => dispatch(actions.recalculateAvailabilityCounters()),
   };
 };

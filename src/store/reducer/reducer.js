@@ -1,18 +1,11 @@
-import { actionTypes } from './actions';
+import { actionTypes } from '../actions';
 
 const MAX_RECTS_COUNT = 5;
 
-const initState = {
+export const initState = {
   availableWidth: 0,
   availableCount: MAX_RECTS_COUNT,
-
-  rectList: [{
-    top: 100,
-    left: 300,
-    width: 200,
-    height: 250,
-    id: 0,
-  }],
+  rectList: [],
 };
 
 const recalculateMaxAvailability = (rectList) => {
@@ -34,17 +27,26 @@ const reducer = (state = initState, action) => {
   switch(action.type) {
 
     case actionTypes.ADD_RECT_TO_LIST:
-      const rectListAdded = [...state.rectList, action.payload.rect];
+      const newRect = action.payload.rect;
+
+      if (state.availableCount <= 0) return state;
+      if (state.availableWidth < newRect.width) return state;
+
+      const newList = [...state.rectList, {
+        ...newRect,
+        id: new Date().getTime() ,
+      }];
+
       return {
         ...state,
-        rectList: rectListAdded,
-        isAdding: false,
-        ...recalculateMaxAvailability(rectListAdded),
+        rectList: newList,
+        ...recalculateMaxAvailability(newList),
       };
 
     case actionTypes.REMOVE_RECT_TO_LIST:
       const rectListRemoved = [...state.rectList];
-      rectListRemoved.splice(action.payload.index, 1);
+      const removedIndex = action.payload.index;
+      rectListRemoved.splice(removedIndex, 1);
 
       return {
         ...state,
