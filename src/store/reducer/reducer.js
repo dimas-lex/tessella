@@ -6,6 +6,7 @@ export const initState = {
   availableWidth: 0,
   availableCount: MAX_RECTS_COUNT,
   rectList: [],
+  UID: null,
 };
 
 const recalculateMaxAvailability = (rectList) => {
@@ -63,6 +64,15 @@ const reducer = (state = initState, action) => {
       return {
         ...initState,
         ...recalculateMaxAvailability(initState.rectList),
+      };
+
+    case actionTypes.SAVED:
+      const UID = action.payload.UID;
+      if (!UID) return state;
+
+      return {
+        ...state,
+        UID
       };
 
     default:

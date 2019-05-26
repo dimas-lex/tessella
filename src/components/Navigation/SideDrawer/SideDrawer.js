@@ -14,6 +14,12 @@ const sideDrawer = (props) => {
 
       <StatisticBox {...props} />
       <TButton onClick={props.onReset}> Reset Store </TButton>
+      {
+        props.UID !== null
+          ? `Saved. Your code is ${props.UID}`
+          : <TButton onClick={props.onSave}> Save Store To Cloud </TButton>
+      }
+
     </div>
   );
 };

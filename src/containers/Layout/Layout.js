@@ -89,7 +89,9 @@ export class Layout extends PureComponent {
           <SideDrawer
             availableWidth={props.availableWidth}
             availableCount={props.availableCount}
+            UID={props.UID}
             onReset={props.onResetStore}
+            onSave={props.saveStore}
           />
         </aside>
         <main
@@ -113,6 +115,7 @@ const mapStateToProps = state => {
     rectList: state.rectList || [],
     availableWidth: state.availableWidth,
     availableCount: state.availableCount,
+    UID: state.UID,
   };
 };
 
@@ -122,6 +125,7 @@ const mapDispatchToProps = (dispatch) => {
     removeRectHandler: (index) => dispatch(actions.removeRectFromList(index)),
     recalculateMaxAvailability: () => dispatch(actions.recalculateAvailabilityCounters()),
     onResetStore: () => dispatch(actions.resetStore()),
+    saveStore: () => dispatch(actions.saveStateToCloud()),
   };
 };
 
