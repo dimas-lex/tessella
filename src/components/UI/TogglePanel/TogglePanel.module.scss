@@ -1,0 +1,37 @@
+@import 'styles/_colors.scss';
+
+.toggleButton {
+  background-color: transparent;
+  padding: 0;
+  margin: 3px 0;
+  transition: $transition-all;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: auto;
+  transition: $transition-all;
+}
+
+.toggleButton_button {
+  background-color: $toggle-panel-button;
+  width: 100%;
+}
+.toggleButton_button--opened {
+  background-color: $toggle-panel-button--toggled;
+  margin-bottom: 0;
+}
+
+.toggleButton_children {
+  background-color: $toggle-panel-child--toggled;
+  padding: 3px;
+  box-sizing: border-box;
+  opacity: 0;
+  height: 0;
+  transition: $transition-all;
+}
+
+.toggleButton_children--opened {
+  opacity: 1;
+  height: auto;
+}

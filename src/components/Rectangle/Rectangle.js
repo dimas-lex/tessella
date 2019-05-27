@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classes from './Rectangle.module.scss';
 
 
@@ -31,9 +32,16 @@ const rectangle = (props) => {
             :'Right Click to remove'
         }
       </div>
-
     </div>
   );
-}
+};
+
+rectangle.propsTypes = {
+  top: PropTypes.number.isRequired,
+  left: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  zIndex: PropTypes.number.isRequired,
+};
 
 export default React.memo(rectangle);

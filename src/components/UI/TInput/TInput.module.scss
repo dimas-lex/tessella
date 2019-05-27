@@ -1,0 +1,38 @@
+@import 'styles/_colors.scss';
+
+.tinput {
+  width: 100%;
+  padding: 10px 0 6px;
+  margin: 0;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+.tinput_label {
+  font-weight: 400;
+  font-size: 15px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.tinput_input {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid $input-border-color;
+  background-color: $input-background-color;
+  color: $input-color;
+  font-size: 16px;
+  height: 28px;
+  padding: 3px;
+  box-sizing: border-box;
+  transition: 1s all;
+}
+
+.tinput_input:active,
+.tinput_input:focus {
+  border-bottom: 2px solid $input-border-color--active;
+}
