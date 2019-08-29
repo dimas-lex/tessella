@@ -5,7 +5,8 @@
   padding: 10px 0 6px;
   margin: 0;
   box-sizing: border-box;
-  height: 60px;
+  height: auto;
+  min-height: 60px;
 }
 
 .tinput_label {
@@ -35,4 +36,36 @@
 .tinput_input:active,
 .tinput_input:focus {
   border-bottom: 2px solid $input-border-color--active;
+}
+.tinput_error {
+  opacity: 0;
+  height: 20px;
+  width: 100%;
+  color: red;
+  font-size: 12px;
+  background: pink;
+  border: 1px solid red;
+  transition: 1s all;
+  position: relative;
+  top: 8px;
+}
+
+.tinput_error:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-bottom: 7px solid red;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+.tinput_error--visible {
+  opacity: 1;
+  visibility: visible;
+  transition: 1s all;
+
 }

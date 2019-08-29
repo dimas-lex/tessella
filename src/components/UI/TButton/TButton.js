@@ -17,8 +17,8 @@ const tButton = (props)  => (
 );
 
 tButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  onClick: PropTypes.func,
+  children: PropTypes.element,
   className: PropTypes.string,
 };
 
